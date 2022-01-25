@@ -1,85 +1,26 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_adamlabs_test2/screen/newOrder.dart';
+import 'package:flutter_adamlabs_test2/constants.dart';
+import 'package:flutter_adamlabs_test2/screen/home/homescreen.dart';
 
-void main() {
-  runApp(const MyApp());
-}
+void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
-
+  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Online Order',
+      debugShowCheckedModeBanner: false,
+      title: 'Food App',
       theme: ThemeData(
-        primarySwatch: Colors.orange,
-      ),
-      home: const MyHomePage(title: 'Online Order Home Page'),
-      routes: {
-        'neworder': (context) => NewOrder(),
-      },
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key, required this.title}) : super(key: key);
-
-  final String title;
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
-
-  Widget myDrawer() {
-    return Drawer(
-        elevation: 16.0,
-        child: SingleChildScrollView(
-            child: Column(
-          children: <Widget>[
-            UserAccountsDrawerHeader(
-                accountName: Text('active_user'),
-                accountEmail: Text("xyz@gmail.com"),
-                currentAccountPicture: CircleAvatar(
-                    backgroundImage:
-                        NetworkImage("https://i.pravatar.cc/300?img=5"))),
-            ListTile(
-              title: Text("New Order"),
-              leading: Icon(
-                Icons.movie,
-                color: Colors.orangeAccent,
-              ),
-              onTap: () {
-                Navigator.popAndPushNamed(context, 'neworder');
-              },
-            ),
-          ],
-        )));
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[],
+        primaryColor: kPrimaryColor,
+        scaffoldBackgroundColor: Colors.white,
+        fontFamily: 'Jaapokki',
+        textTheme: TextTheme(
+          bodyText1: TextStyle(color: ksecondaryColor),
+          bodyText2: TextStyle(color: ksecondaryColor),
         ),
       ),
-      drawer: myDrawer(),
+      home: HomeScreen(),
     );
   }
 }

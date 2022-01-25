@@ -1,6 +1,12 @@
 # flutter_adamlabs_test2
 
-A new Flutter project.
+[Tutorial Penggunaan Aplikasi]
+
+1. Buka Aplikasi
+2. Klik drawer yang ada pada homescreen
+3. Pilih New Order
+4. Masukkan Pesanan lalu klik tombol review order
+5. Jika pesanan sudah benar, klik Konfirmasi Order dan akan diarahkan ke halaman order sukses.
 
 ## Getting Started
 
